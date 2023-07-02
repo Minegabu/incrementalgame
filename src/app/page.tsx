@@ -2,6 +2,7 @@
 import Image from 'next/image'
 import styles from './page.module.css'
 import { useEffect, useState } from 'react';
+<<<<<<< HEAD
 import { Typography,Button } from '@mui/material';
 
 const Home = () => {
@@ -111,6 +112,20 @@ useEffect(() => {
             <Typography>Big Money Generators: {bigmoneygen.toFixed(0)}</Typography>
             <Button variant="contained" color="secondary" onClick = {() => OnBigMoneygen()}>Buy BIG Money Generators</Button>
         </div>
+=======
+
+const Home = () => {
+    // storing money
+    const [money, setMoney] = useState<number>(Number);
+    const OnClickMoney = () => {
+        setMoney(money + 1)
+    }
+    return (
+        <body>
+            <h1>Current Money: {money}</h1>
+            <button onClick = {() => OnClickMoney()}>Click for Money</button>
+        </body>
+>>>>>>> af1a8920e62b0796d4cff8dd0af900432cc794d8
     )
 }
 
