@@ -1,0 +1,23 @@
+a{
+  margin: 10px;
+}
+
+#nav{
+  flex-direction: row;
+}
+
+#currmon{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 10px;
+}
+
+#children{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 10px;
+}
