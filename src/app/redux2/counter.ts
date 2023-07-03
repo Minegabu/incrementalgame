@@ -1,24 +1,42 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-export const moneySlice = createSlice({
-  name: "money",
-  initialState: {
-    money: 0
-  },
+type CounterState = {
+  value: number;
+};
+
+const initialState = {
+  value: 0,
+} as CounterState;
+
+export const counter = createSlice({
+  name: "counter",
+  initialState,
   reducers: {
+    reset: () => initialState,
     increment: (state) => {
-      state.money += 1;
+      state.value += 1;
     },
     decrement: (state) => {
-      state.money -= 1;
+      state.value -= 1;
     },
-    incrementByAmount: (state, action) => {
-      state.money += action.payload;
-    }
-  }
+    incrementByAmount: (state, action: PayloadAction<number>) => {
+      state.value += action.payload;
+    },
+    decrementByAmount: (state, action: PayloadAction<number>) => {
+      state.value -= action.payload;
+    },
+    resetAmount: (state) =>{
+      state.value = 0
+    },
+  },
 });
 
-// Action creators are generated for each case reducer function
-export const { increment, decrement, incrementByAmount } = moneySlice.actions;
-
-export default moneySlice.reducer;
+export const {
+  increment,
+  incrementByAmount,
+  decrement,
+  decrementByAmount,
+  reset,
+  resetAmount,
+} = counter.actions;
+export default counter.reducer;

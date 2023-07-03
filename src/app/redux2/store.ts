@@ -1,8 +1,13 @@
 import { configureStore } from "@reduxjs/toolkit";
-import moneyReducer from "./counter"
+import counterReducer from "./counter";
+import countergenReducer from "./countergen";
 
-export default configureStore({
-    reducer: {
-        money: moneyReducer
-    }
+export const store = configureStore({
+  reducer: {
+    counterReducer,
+    countergenReducer,
+  },
 });
+
+export type RootState = ReturnType<typeof store.getState>;
+export type AppDispatch = typeof store.dispatch;
