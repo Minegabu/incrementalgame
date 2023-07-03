@@ -1,12 +1,9 @@
 'use client'
-import Image from 'next/image'
-import styles from './page.module.css'
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { Typography,Button } from '@mui/material';
-import { decrement, increment, reset,incrementByAmount,decrementByAmount } from "../redux2/counter";
-import { incrementBigMoneygen, incrementMoneygen, decrementRankPoints,incrementMoneygenbyamount } from '../redux2/countergen';
+import { incrementByAmount,decrementByAmount } from "../redux2/counter";
+import { incrementBigMoneygen, incrementMoneygen, decrementRankPoints,incrementMoneygenbyamount,increaseMPS,increaseMPSbyamount } from '../redux2/countergen';
 import { useAppDispatch, useAppSelector } from "../redux2/hooks";
-import { Providers } from "../redux2/provider";
 
 const Home = () => {
 
@@ -27,6 +24,7 @@ const Home = () => {
         if (money >= 10){
             dispatch(incrementMoneygen());
             dispatch(decrementByAmount(10))
+            dispatch(increaseMPS())
         }
       };
     
@@ -41,12 +39,13 @@ const Home = () => {
     useEffect(() => {
     if (bigMoneygen >= 1){
         const timer2 = setInterval(() => {
-            dispatch(incrementMoneygenbyamount(bigMoneygen));
+            dispatch(incrementMoneygenbyamount(bigMoneygen))
+            dispatch(increaseMPSbyamount(bigMoneygen));
         }, 1000);
         return () => {
             clearInterval(timer2);
         };
-    }
+    } 
   }, [bigMoneygen]);
 
 
@@ -54,7 +53,7 @@ const Home = () => {
     if (moneygen >= 1) {
       const timer = setInterval(() => {
         dispatch(incrementByAmount(moneygen / 10 * timesmoney));
-      }, 1000);
+      }, 100);
 
       return () => {
         clearInterval(timer);
@@ -65,7 +64,7 @@ const Home = () => {
 
     return (
         <div>
-            <Typography>Money Generators: {moneygen.toFixed(1)} </Typography> 
+            <Typography>Money Generators: {moneygen.toFixed(0)} </Typography> 
             <Button variant="contained" color="secondary" onClick = {() => increaseMoneygen()}>Buy Money Generators</Button>
             <Typography>Big Money Generators: {bigMoneygen.toFixed(0)}</Typography>
             <Button variant="contained" color="secondary" onClick = {() => increaseBigMoneygen()}>Buy BIG Money Generators</Button>

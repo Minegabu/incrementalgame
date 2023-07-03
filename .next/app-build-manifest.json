@@ -1,5 +1,11 @@
 {
   "pages": {
+    "/app/layout": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/app/layout.css",
+      "static/chunks/app/app/layout.js"
+    ],
     "/app/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
@@ -10,12 +16,6 @@
       "static/chunks/main-app.js",
       "static/css/app/layout.css",
       "static/chunks/app/layout.js"
-    ],
-    "/app/layout": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/app/layout.css",
-      "static/chunks/app/app/layout.js"
     ],
     "/app/rank/page": [
       "static/chunks/webpack.js",

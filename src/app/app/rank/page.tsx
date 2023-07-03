@@ -6,7 +6,7 @@ import { Typography,Button } from '@mui/material';
 import { decrement, increment, reset, resetAmount } from "../../redux2/counter";
 import { useAppDispatch, useAppSelector } from "../../redux2/hooks";
 import { Providers } from "../../redux2/provider";
-import { incrementRank,resetMoneyGen } from "../../redux2/countergen"
+import { incrementRank,resetMoneyGen,resetEverything } from "../../redux2/countergen"
 
 const RankHome = () => {
       const dispatch = useAppDispatch();
@@ -22,7 +22,8 @@ const RankHome = () => {
         }
       };
       const OnTestingReset = () => {
-        console.log("Hi")
+        dispatch(resetEverything())
+        dispatch(resetAmount())
       }
     return(
         <div>

@@ -22,17 +22,20 @@ export default function RootLayout({
   const money = useAppSelector((state) => state.counterReducer.value);
   const dispatch = useAppDispatch();
   const moneygen = useAppSelector((state) => state.countergenReducer.moneygen)
-  const bigmoneygen = useAppSelector((state) => state.countergenReducer.bigmoneygen)
-  const [moneyPerSecond, setMoneyPerSecond] = useState<number>(() => {
-    const storedMoneyPerSecond = window.localStorage.getItem('mps ');
-    return storedMoneyPerSecond ? parseFloat(storedMoneyPerSecond) : 0;
-  });
-
+  const timesmoney = useAppSelector((state) => state.countergenReducer.multiplier)
+  const mps = useAppSelector((state) => state.countergenReducer.mps)
+  function formatNumber(value: number, decimalPlaces:number) {
+    const scientificNotation = value.toExponential(decimalPlaces);
+    const [mantissa, exponent] = scientificNotation.split('e');
+    const formattedExponent = exponent.replace('+', '')
+    const formattedNumber = `${parseFloat(mantissa).toFixed(decimalPlaces)}e${formattedExponent}`;
+    return formattedNumber;
+  }
    useEffect(() => {
     if (moneygen >= 1) {
       const timer = setInterval(() => {
         dispatch(incrementByAmount(moneygen / 10 * timesmoney));
-      }, 1000);
+      }, 100);
 
       return () => {
         clearInterval(timer);
@@ -46,8 +49,8 @@ export default function RootLayout({
           <Container className={inter.className}>
             <div id="body">
             <div id="currmon">
-              <Typography variant="h6">Current Money: {money.toFixed(1)}</Typography>
-              <Typography variant="h6">({moneyPerSecond}/s)</Typography>
+              <Typography variant="h6">Current Money: {formatNumber(money,2)}</Typography>
+              <Typography variant="h6">({formatNumber(mps,2)}/s)</Typography>
                 <Button variant="contained" color="secondary" onClick={() => dispatch(increment())}>
                   Click for Money
                 </Button>

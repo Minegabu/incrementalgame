@@ -56,17 +56,17 @@
         "async": false
       }
     },
-    "(app-client)/./src/app/app/page.tsx": {
+    "(app-client)/./node_modules/next/dist/client/link.js": {
       "*": {
-        "id": "(sc_client)/./src/app/app/page.tsx",
+        "id": "(sc_client)/./node_modules/next/dist/client/link.js",
         "name": "*",
         "chunks": [],
         "async": false
       }
     },
-    "(app-client)/./src/app/layout.tsx": {
+    "(app-client)/./src/app/app/layout.tsx": {
       "*": {
-        "id": "(sc_client)/./src/app/layout.tsx",
+        "id": "(sc_client)/./src/app/app/layout.tsx",
         "name": "*",
         "chunks": [],
         "async": false
@@ -80,17 +80,17 @@
         "async": false
       }
     },
-    "(app-client)/./node_modules/next/dist/client/link.js": {
+    "(app-client)/./src/app/app/page.tsx": {
       "*": {
-        "id": "(sc_client)/./node_modules/next/dist/client/link.js",
+        "id": "(sc_client)/./src/app/app/page.tsx",
         "name": "*",
         "chunks": [],
         "async": false
       }
     },
-    "(app-client)/./src/app/app/layout.tsx": {
+    "(app-client)/./src/app/layout.tsx": {
       "*": {
-        "id": "(sc_client)/./src/app/app/layout.tsx",
+        "id": "(sc_client)/./src/app/layout.tsx",
         "name": "*",
         "chunks": [],
         "async": false
@@ -267,30 +267,6 @@
       ],
       "async": false
     },
-    "C:\\Users\\Gabriel\\Desktop\\incrementalgame-master\\src\\app\\app\\page.tsx": {
-      "id": "(app-client)/./src/app/app/page.tsx",
-      "name": "*",
-      "chunks": [
-        "app/app/page:static/chunks/app/app/page.js"
-      ],
-      "async": false
-    },
-    "C:\\Users\\Gabriel\\Desktop\\incrementalgame-master\\src\\app\\layout.tsx": {
-      "id": "(app-client)/./src/app/layout.tsx",
-      "name": "*",
-      "chunks": [
-        "app/layout:static/chunks/app/layout.js"
-      ],
-      "async": false
-    },
-    "C:\\Users\\Gabriel\\Desktop\\incrementalgame-master\\src\\app\\redux2\\provider.tsx": {
-      "id": "(app-client)/./src/app/redux2/provider.tsx",
-      "name": "*",
-      "chunks": [
-        "app/app/layout:static/chunks/app/app/layout.js"
-      ],
-      "async": false
-    },
     "C:\\Users\\Gabriel\\Desktop\\incrementalgame-master\\node_modules\\next\\dist\\client\\link.js": {
       "id": "(app-client)/./node_modules/next/dist/client/link.js",
       "name": "*",
@@ -315,6 +291,30 @@
       ],
       "async": false
     },
+    "C:\\Users\\Gabriel\\Desktop\\incrementalgame-master\\src\\app\\redux2\\provider.tsx": {
+      "id": "(app-client)/./src/app/redux2/provider.tsx",
+      "name": "*",
+      "chunks": [
+        "app/app/layout:static/chunks/app/app/layout.js"
+      ],
+      "async": false
+    },
+    "C:\\Users\\Gabriel\\Desktop\\incrementalgame-master\\src\\app\\app\\page.tsx": {
+      "id": "(app-client)/./src/app/app/page.tsx",
+      "name": "*",
+      "chunks": [
+        "app/app/page:static/chunks/app/app/page.js"
+      ],
+      "async": false
+    },
+    "C:\\Users\\Gabriel\\Desktop\\incrementalgame-master\\src\\app\\layout.tsx": {
+      "id": "(app-client)/./src/app/layout.tsx",
+      "name": "*",
+      "chunks": [
+        "app/layout:static/chunks/app/layout.js"
+      ],
+      "async": false
+    },
     "C:\\Users\\Gabriel\\Desktop\\incrementalgame-master\\src\\app\\app\\rank\\page.tsx": {
       "id": "(app-client)/./src/app/app/rank/page.tsx",
       "name": "*",
@@ -325,6 +325,15 @@
     }
   },
   "entryCSSFiles": {
+    "C:\\Users\\Gabriel\\Desktop\\incrementalgame-master\\src\\app\\app\\layout": {
+      "modules": [
+        "C:\\Users\\Gabriel\\Desktop\\incrementalgame-master\\src\\app\\globals.css",
+        "C:\\Users\\Gabriel\\Desktop\\incrementalgame-master\\node_modules\\next\\font\\google\\target.css?{\"path\":\"src\\\\app\\\\app\\\\layout.tsx\",\"import\":\"Inter\",\"arguments\":[{\"subsets\":[\"latin\"]}],\"variableName\":\"inter\"}"
+      ],
+      "files": [
+        "static/css/app/app/layout.css"
+      ]
+    },
     "C:\\Users\\Gabriel\\Desktop\\incrementalgame-master\\src\\app\\app\\page": {
       "modules": [],
       "files": []
@@ -335,15 +344,6 @@
       ],
       "files": [
         "static/css/app/layout.css"
-      ]
-    },
-    "C:\\Users\\Gabriel\\Desktop\\incrementalgame-master\\src\\app\\app\\layout": {
-      "modules": [
-        "C:\\Users\\Gabriel\\Desktop\\incrementalgame-master\\src\\app\\globals.css",
-        "C:\\Users\\Gabriel\\Desktop\\incrementalgame-master\\node_modules\\next\\font\\google\\target.css?{\"path\":\"src\\\\app\\\\app\\\\layout.tsx\",\"import\":\"Inter\",\"arguments\":[{\"subsets\":[\"latin\"]}],\"variableName\":\"inter\"}"
-      ],
-      "files": [
-        "static/css/app/app/layout.css"
       ]
     },
     "C:\\Users\\Gabriel\\Desktop\\incrementalgame-master\\src\\app\\app\\rank\\page": {
